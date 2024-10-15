@@ -15,12 +15,12 @@ import static org.mockito.Mockito.mock;
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTest {
 
-    private static Burger burger;
+    private Burger burger;
 
     @Mock
-    private static Bun mockBun;
+    private Bun mockBun;
     @Mock
-    private static Ingredient mockIngredient;
+    private Ingredient mockIngredient;
 
     @Before
     public void setUp() {

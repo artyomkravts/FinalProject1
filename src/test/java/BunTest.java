@@ -4,7 +4,7 @@ import praktikum.Bun;
 
 public class BunTest {
 
-    private static Bun bun;
+    private Bun bun;
 
     @Test
     public void bunGetNameSuccessful() {
