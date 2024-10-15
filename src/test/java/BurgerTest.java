@@ -10,8 +10,6 @@ import praktikum.Burger;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
 
-import java.util.List;
-
 import static org.mockito.Mockito.mock;
 
 @RunWith(MockitoJUnitRunner.class)
