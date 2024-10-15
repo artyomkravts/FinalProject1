@@ -22,8 +22,6 @@ public class BurgerTest {
     @Mock
     private static Bun mockBun;
     @Mock
-    private static List<Ingredient> mockIngredients;
-    @Mock
     private static Ingredient mockIngredient;
 
     @Before
