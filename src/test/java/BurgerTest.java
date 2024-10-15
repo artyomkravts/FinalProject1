@@ -28,7 +28,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void addIngridientMockIngridientAdded() {
+    public void addIngredientMockIngredientAdded() {
         burger.addIngredient(mockIngredient);
 
         Assert.assertTrue(burger.ingredients.contains(mockIngredient));
@@ -42,7 +42,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void removeIngredientMockIngridientRemoved() {
+    public void removeIngredientMockIngredientRemoved() {
         burger.addIngredient(mockIngredient);
         burger.removeIngredient(0);
 
@@ -50,7 +50,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void moveIngridientFromZeroToFirstIndexMoved() {
+    public void moveIngredientFromZeroToFirstIndexMoved() {
         Ingredient mockIngredient2 = mock(Ingredient.class);
         burger.addIngredient(mockIngredient);
         burger.addIngredient(mockIngredient2);

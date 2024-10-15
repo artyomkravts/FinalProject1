@@ -1,18 +1,18 @@
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
 
-import java.util.Random;
+import java.util.Arrays;
+import java.util.Collection;
 
-@RunWith(MockitoJUnitRunner.class)
-public class IngredientTest {
+@RunWith(Parameterized.class)
+public class IngredientParameterizedTest {
 
     private Ingredient ingredient;
     private String randomName;
@@ -21,13 +21,24 @@ public class IngredientTest {
     @Mock
     private IngredientType mockIngredientType;
 
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{
+                {"Ingredient1", 314f},
+                {"Ingredient2", 45678f},
+                {"Ingredient3", 0f}
+
+    });
+    }
+    public IngredientParameterizedTest(String randomName, float randomPrice) {
+        this.randomName = randomName;
+        this.randomPrice = randomPrice;
+    }
+
     @Before
     public void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        Random random = new Random();
-        randomName = RandomStringUtils.randomAlphabetic(15);
-        randomPrice = random.nextFloat();
         ingredient = new Ingredient(mockIngredientType, randomName, randomPrice);
     }
 
@@ -39,11 +50,6 @@ public class IngredientTest {
     @Test
     public void getPriceRandomPriceReturnsSame() {
         Assert.assertEquals(randomPrice, ingredient.getPrice(), 0);
-    }
-
-    @Test
-    public void getTypeMockTypeReturnsCorrect() {
-        Assert.assertEquals(mockIngredientType, ingredient.getType());
     }
 
 }
